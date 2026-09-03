@@ -1,4 +1,3 @@
-<script>
 /* ============================================================
    DATOS DEL NEGOCIO (extraídos del material entregado por el cliente)
    ============================================================ */
@@ -301,7 +300,6 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
 }, { threshold:.15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
 /* ============================================================
    NAVEGACIÓN POR PESTAÑAS (SPA) — sustituye el scroll continuo
    ============================================================ */
