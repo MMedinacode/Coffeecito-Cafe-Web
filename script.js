@@ -270,6 +270,24 @@ updateOpenStatus();
 setInterval(updateOpenStatus, 60000);
 
 /* ============================================================
+   LISTA DE HORARIO POR DÍA — mismo horario todos los días
+   (16:00–21:30, fuente: Instagram story), resaltando el día actual
+   ============================================================ */
+function renderHoursList(){
+  const DIAS = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  const fmt = (h,m) => h + (m ? ':' + String(m).padStart(2,'0') : ':00');
+  const rango = fmt(BUSINESS.hours.openHour, BUSINESS.hours.openMin) + ' – ' + fmt(BUSINESS.hours.closeHour, BUSINESS.hours.closeMin) + ' hrs';
+  const today = new Date().getDay();
+  const list = document.getElementById('hours-list');
+  if(!list) return;
+  list.innerHTML = DIAS.map((d,i) => `
+    <div class="flex justify-between gap-6 ${i===today ? 'font-medium text-[var(--olive-deep)]' : 'text-[var(--ink)]/70'}">
+      <span>${d}</span><span>${rango}</span>
+    </div>`).join('');
+}
+renderHoursList();
+
+/* ============================================================
    HEADER: transparente -> sólido, color de textos, menú móvil
    ============================================================ */
 const headerFgEls = document.querySelectorAll('.header-fg');
