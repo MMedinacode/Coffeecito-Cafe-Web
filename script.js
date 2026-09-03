@@ -272,19 +272,8 @@ setInterval(updateOpenStatus, 60000);
 /* ============================================================
    HEADER: transparente -> sólido, color de textos, menú móvil
    ============================================================ */
-const header = document.getElementById('site-header');
 const headerFgEls = document.querySelectorAll('.header-fg');
-function updateHeader(){
-  if(window.scrollY > 60){
-    header.classList.add('solid');
-    headerFgEls.forEach(el => el.style.color = 'var(--ink)');
-  } else {
-    header.classList.remove('solid');
-    headerFgEls.forEach(el => el.style.color = 'var(--cream)');
-  }
-}
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive:true });
+headerFgEls.forEach(el => el.style.color = 'var(--ink)');
 
 document.getElementById('menu-toggle').addEventListener('click', () => {
   document.getElementById('mobile-nav').classList.toggle('hidden');
@@ -307,6 +296,7 @@ function showTab(name){
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('is-active'));
   const target = document.getElementById('tab-' + name);
   if(target){ target.classList.add('is-active'); }
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.dataset.tab === name));
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 document.querySelectorAll('[data-tab]').forEach(el => {

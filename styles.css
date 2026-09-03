@@ -15,6 +15,7 @@
 
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
+  a{ color:inherit; text-decoration:none; }
   body{
     background:var(--cream);
     color:var(--ink);
@@ -38,10 +39,7 @@
 
   /* Header */
   #site-header{
-    transition:background-color .5s ease, box-shadow .5s ease, padding .4s ease;
-  }
-  #site-header.solid{
-    background-color:rgba(241,236,224,.92);
+    background-color:rgba(241,236,224,.96);
     backdrop-filter:blur(10px);
     box-shadow:0 1px 0 rgba(20,18,16,.08);
   }
@@ -55,6 +53,8 @@
     transition:width .3s ease;
   }
   #site-header .nav-link:hover::after{ width:100%; }
+  #site-header .nav-link.active{ color:var(--olive); }
+  #site-header .nav-link.active::after{ width:100%; background:var(--olive); }
 
   /* Signature motif — corona + trazo, eco lineal del isotipo real */
   .signature-divider{ display:flex; align-items:center; justify-content:center; gap:14px; }
@@ -197,9 +197,9 @@
 .hover\:border-\[var\(--ink\)\]:hover{border-color:var(--ink);}
 .hover\:border-\[var\(--olive\)\]:hover{border-color:var(--olive);}
 .hover\:from-\[\#f9ce34\]\/30:hover{--grad-from:color-mix(in srgb, #f9ce34 30%, transparent);}
-.hover\:text-\[var\(--cream\)\]:hover{font-size:var(--cream);}
-.hover\:text-\[var\(--gold-pale\)\]:hover{font-size:var(--gold-pale);}
-.hover\:text-\[var\(--olive\)\]:hover{font-size:var(--olive);}
+.hover\:text-\[var\(--cream\)\]:hover{color:var(--cream);}
+.hover\:text-\[var\(--gold-pale\)\]:hover{color:var(--gold-pale);}
+.hover\:text-\[var\(--olive\)\]:hover{color:var(--olive);}
 .hover\:to-\[\#6228d7\]\/30:hover{--grad-to:color-mix(in srgb, #6228d7 30%, transparent);}
 .hover\:via-\[\#ee2a7b\]\/30:hover{--grad-via:color-mix(in srgb, #ee2a7b 30%, transparent);}
 .inline-flex{display:inline-flex;}
@@ -221,10 +221,10 @@
 @media (min-width:1024px){.lg\:aspect-auto{aspect-ratio:auto;}}
 @media (min-width:1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0,1fr));}}
 @media (min-width:1024px){.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0,1fr));}}
+.text-\[13vw\]{font-size:13vw;}
 @media (min-width:1024px){.lg\:grid-cols-\[1fr_1\.3fr\]{grid-template-columns:1fr 1.3fr;}}
 @media (min-width:1024px){.lg\:order-1{order:1;}}
 @media (min-width:1024px){.lg\:order-2{order:2;}}
-@media (min-width:1024px){.lg\:text-\[5\.2rem\]{font-size:5.2rem;}}
 .max-w-3xl{max-width:48rem;}
 .max-w-7xl{max-width:80rem;}
 .max-w-md{max-width:28rem;}
@@ -306,6 +306,7 @@
 @media (min-width:640px){.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0,1fr));}}
 @media (min-width:640px){.sm\:inline-block{display:inline-block;}}
 @media (min-width:640px){.sm\:text-\[8vw\]{font-size:8vw;}}
+@media (min-width:1024px){.lg\:text-\[5\.2rem\]{font-size:5.2rem;}}
 .space-y-16 > * + *{margin-top:4rem;}
 .space-y-3 > * + *{margin-top:0.75rem;}
 .space-y-4 > * + *{margin-top:1rem;}
@@ -314,18 +315,17 @@
 .text-3xl{font-size:1.875rem;}
 .text-4xl{font-size:2.25rem;}
 .text-\[10px\]{font-size:10px;}
-.text-\[13vw\]{font-size:13vw;}
 .text-\[15px\]{font-size:15px;}
-.text-\[var\(--cream\)\]{font-size:var(--cream);}
+.text-\[var\(--cream\)\]{color:var(--cream);}
 .text-\[var\(--cream\)\]\/40{color:color-mix(in srgb, var(--cream) 40%, transparent);}
 .text-\[var\(--cream\)\]\/60{color:color-mix(in srgb, var(--cream) 60%, transparent);}
 .text-\[var\(--cream\)\]\/70{color:color-mix(in srgb, var(--cream) 70%, transparent);}
 .text-\[var\(--cream\)\]\/75{color:color-mix(in srgb, var(--cream) 75%, transparent);}
 .text-\[var\(--cream\)\]\/80{color:color-mix(in srgb, var(--cream) 80%, transparent);}
 .text-\[var\(--cream\)\]\/85{color:color-mix(in srgb, var(--cream) 85%, transparent);}
-.text-\[var\(--gold\)\]{font-size:var(--gold);}
-.text-\[var\(--gold-pale\)\]{font-size:var(--gold-pale);}
-.text-\[var\(--ink\)\]{font-size:var(--ink);}
+.text-\[var\(--gold\)\]{color:var(--gold);}
+.text-\[var\(--gold-pale\)\]{color:var(--gold-pale);}
+.text-\[var\(--ink\)\]{color:var(--ink);}
 .text-\[var\(--ink\)\]\/35{color:color-mix(in srgb, var(--ink) 35%, transparent);}
 .text-\[var\(--ink\)\]\/40{color:color-mix(in srgb, var(--ink) 40%, transparent);}
 .text-\[var\(--ink\)\]\/45{color:color-mix(in srgb, var(--ink) 45%, transparent);}
@@ -333,8 +333,8 @@
 .text-\[var\(--ink\)\]\/60{color:color-mix(in srgb, var(--ink) 60%, transparent);}
 .text-\[var\(--ink\)\]\/70{color:color-mix(in srgb, var(--ink) 70%, transparent);}
 .text-\[var\(--ink\)\]\/80{color:color-mix(in srgb, var(--ink) 80%, transparent);}
-.text-\[var\(--olive\)\]{font-size:var(--olive);}
-.text-\[var\(--olive-deep\)\]{font-size:var(--olive-deep);}
+.text-\[var\(--olive\)\]{color:var(--olive);}
+.text-\[var\(--olive-deep\)\]{color:var(--olive-deep);}
 .text-base{font-size:1rem;}
 .text-center{text-align:center;}
 .text-left{text-align:left;}
