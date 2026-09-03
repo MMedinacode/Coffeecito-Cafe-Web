@@ -85,6 +85,7 @@
   .pillar-card{ border-top:1px solid rgba(20,18,16,.12); transition:border-color .35s ease, transform .35s ease; }
   .pillar-card:hover{ border-color:var(--olive); transform:translateY(-4px); }
 
+  .dish-row{ min-width:0; }
   .dish-card{ cursor:pointer; }
   .dish-card .dish-img{ overflow:hidden; }
   .dish-card .dish-img img{ transition:transform .7s cubic-bezier(.16,1,.3,1); }
