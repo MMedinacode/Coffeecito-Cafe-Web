@@ -246,11 +246,10 @@
     </div>
   </div>
 
-  <!-- Sin Place ID confirmado del negocio: se usa búsqueda por dirección.
-       Reemplazar por https://search.google.com/local/writereview?placeid=EL_PLACE_ID
-       en cuanto se confirme el Place ID real (ver Prompt Maestro, sección 8). -->
+  <!-- Place ID real confirmado en la ficha de Google Maps (09-09-2026).
+       Ahora el botón abre directo el formulario de reseña del negocio. -->
   <div class="reveal mt-14 text-center">
-    <a href="https://www.google.com/maps/search/?api=1&query=Coffeecito+Café+Av.+San+Ignacio+855+Padre+Hurtado" target="_blank" rel="noopener" class="label inline-flex items-center gap-2 border-b border-[var(--ink)] pb-1 hover:text-[var(--olive)] hover:border-[var(--olive)]">
+    <a href="https://search.google.com/local/writereview?placeid=0x9662e74b15ccd7c5:0x99fd35235a4c3ead" target="_blank" rel="noopener" class="label inline-flex items-center gap-2 border-b border-[var(--ink)] pb-1 hover:text-[var(--olive)] hover:border-[var(--olive)]">
       ¿Nos visitaste? Déjanos tu reseña en Google
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -331,11 +330,12 @@
       </a>
     </div>
 
-    <!-- Sin Place ID confirmado del negocio: mapa embebido por búsqueda de dirección.
-         Reemplazar src por https://www.google.com/maps?q=place_id:EL_PLACE_ID&z=17&output=embed
-         en cuanto se confirme el Place ID real (ver Prompt Maestro, sección 8). -->
+    <!-- Place ID real confirmado en la ficha de Google Maps del negocio
+         (09-09-2026): 0x9662e74b15ccd7c5:0x99fd35235a4c3ead — coordenadas
+         -33.5671302, -70.8219402. El embed ahora marca el pin del local y
+         no solo la dirección. -->
     <div class="relative aspect-[4/5] lg:aspect-auto overflow-hidden rounded-sm">
-      <iframe src="https://www.google.com/maps?q=Coffeecito+Café+Av.+San+Ignacio+855,+Padre+Hurtado,+Región+Metropolitana,+Chile&z=17&output=embed" width="100%" height="100%" style="border:0;position:absolute;inset:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Coffeecito Café, Av. San Ignacio 855, Padre Hurtado"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.0!2d-70.8219402!3d-33.5671302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662e74b15ccd7c5%3A0x99fd35235a4c3ead!2sCoffeecito%20Caf%C3%A9!5e0!3m2!1ses-419!2scl!4v1789005220000!5m2!1ses-419!2scl" width="100%" height="100%" style="border:0;position:absolute;inset:0;" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Mapa de Coffeecito Café, Av. San Ignacio 855, Padre Hurtado"></iframe>
     </div>
   </div>
 </section>
